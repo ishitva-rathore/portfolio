@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ishitva Rathore | IIM Bangalore</title>
+    <title>Ishitva Rathore | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
     <style>
-        /* 1. CSS VARIABLES (Colors & Theme) */
         :root {
             --bg: #0a0a0a;
-            --card-bg: #111111;
-            --text-main: #ffffff;
-            --text-dim: #a1a1aa;
-            --accent: #3b82f6; /* IIMB Professional Blue */
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent: #3b82f6;
             --border: #262626;
         }
 
-        /* 2. GLOBAL RESET & TYPOGRAPHY */
         * {
             margin: 0;
             padding: 0;
@@ -28,258 +24,212 @@
 
         body {
             background-color: var(--bg);
-            color: var(--text-main);
+            color: var(--text-primary);
             line-height: 1.6;
+            padding: 0 5%;
         }
 
-        /* 3. NAVIGATION (Positioning & Flexbox) */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
+        /* Hero Section */
+        .hero {
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            padding: 1.2rem;
-            z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
 
-        nav a {
-            color: var(--text-dim);
-            text-decoration: none;
-            margin: 0 1.5rem;
-            font-size: 0.75rem;
+        .hero-label {
+            color: var(--accent);
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             font-weight: 600;
-            transition: 0.3s;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
         }
 
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        /* 4. LAYOUT CONTAINER */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 8rem 2rem;
-        }
-
-        /* 5. HERO SECTION */
-        header h1 {
-            font-size: 3.5rem;
+        .hero h1 {
+            font-size: clamp(3.5rem, 10vw, 7rem);
             font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 0.5rem;
+            line-height: 0.9;
+            letter-spacing: -3px;
+            margin-bottom: 2rem;
         }
 
-        header p {
-            color: var(--text-dim);
+        .hero p {
+            max-width: 600px;
             font-size: 1.1rem;
+            color: var(--text-secondary);
         }
 
-        .highlight {
-            color: var(--accent);
-        }
-
-        /* 6. SECTION STYLING */
+        /* Section Styling (Siddharth Style) */
         section {
-            margin-top: 5rem;
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-num {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            display: block;
         }
 
         h2 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--text-dim);
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
         }
 
-        .about-text {
-            font-size: 1.1rem;
-            color: var(--text-dim);
+        h2 em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--text-secondary);
         }
 
-        /* 7. EXPERIENCE CARDS (Selectors & Hover Effects) */
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
+        /* Grid Layout for Education/Experience */
+        .grid-item {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px); /* Interactive lift */
+        .timeline {
+            color: var(--text-secondary);
+            font-weight: 500;
         }
 
-        .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.2rem;
-        }
-
-        .card-meta {
-            display: block;
-            font-size: 0.9rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        ul {
-            list-style: none;
-            color: var(--text-dim);
-        }
-
-        li {
+        .content h3 {
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
-            position: relative;
         }
 
-        li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
+        .content p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
         }
 
-        /* 8. SKILLS & CERTS (Flexbox Grid) */
-        .tag-group {
+        /* Skills Pill Styling */
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
+            gap: 1rem;
         }
 
-        .tag {
-            background: var(--border);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            color: var(--text-main);
+        .skill-pill {
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.9rem;
             transition: 0.3s;
         }
 
-        .tag:hover {
+        .skill-pill:hover {
+            border-color: var(--accent);
             background: var(--accent);
+            color: white;
         }
 
-        /* 9. CONTACT SECTION */
-        .contact-links a {
-            color: var(--accent);
+        /* Contact Section */
+        .contact-link {
+            font-size: 2rem;
+            font-weight: 700;
             text-decoration: none;
-            margin-right: 2rem;
-            font-weight: 600;
-            border-bottom: 1px solid transparent;
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 1rem;
             transition: 0.3s;
         }
 
-        .contact-links a:hover {
-            border-bottom: 1px solid var(--accent);
+        .contact-link:hover {
+            padding-left: 20px;
+            color: var(--accent);
         }
 
-        /* 10. RESPONSIVE DESIGN */
-        @media (max-width: 600px) {
-            header h1 { font-size: 2.5rem; }
-            nav a { margin: 0 0.8rem; font-size: 0.65rem; }
+        @media (max-width: 768px) {
+            .grid-item { grid-template-columns: 1fr; gap: 0.5rem; }
+            .hero h1 { font-size: 4rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <header class="hero">
+        <span class="hero-label">IIMB (BBA DBE) · Science 90%</span>
+        <h1>ISHITVA<br>RATHORE</h1>
+        <p>On a journey to master both the precision of finance and the creativity of modern business — blending analytical thinking with entrepreneurial vision.</p>
+    </header>
 
-    <div class="container">
-        <header>
-            <h1>Ishitva Rathore</h1>
-            <p>BBA in Digital Business & Entrepreneurship | <span class="highlight">IIM Bangalore</span></p>
-            <p style="font-size: 0.9rem; margin-top: 8px;">Aspiring Entrepreneur • Finance & Accounting</p>
-        </header>
+    <section id="about">
+        <span class="section-num">01 / About</span>
+        <h2>Finance meets <em>Entrepreneurship</em></h2>
+        <p style="max-width: 800px; font-size: 1.2rem; color: var(--text-secondary);">
+            I am a BBA student at IIM Bangalore, dedicated to mastering the intersection of finance and scalable digital models. I combine rigorous analytical thinking from a Science background with proven leadership to drive value in the evolving digital economy.
+        </p>
+    </section>
 
-        <section id="about">
-            <h2>About</h2>
-            <p class="about-text">I am a BBA in Digital Business & Entrepreneurship student at IIM Bangalore, dedicated to mastering the intersection of finance and scalable digital models. As an aspiring entrepreneur, I focus on building data-driven business solutions that create measurable real-world impact. I combine rigorous analytical thinking from a Science background with proven leadership to drive value in the evolving digital economy.</p>
-        </section>
+    <section id="education">
+        <span class="section-num">02 / Education</span>
+        <h2>Academic <em>Foundation</em></h2>
 
-        <section id="education">
-            <h2>Education</h2>
-            <div class="card">
-                <h3>IIM Bangalore</h3>
-                <span class="card-meta">BBA in Digital Business & Entrepreneurship | 2025 - 2028</span>
+        <div class="grid-item">
+            <div class="timeline">2025 – 2028 (Exp.)</div>
+            <div class="content">
+                <h3>Indian Institute of Management Bangalore</h3>
+                <p>Bachelor of Business Administration</p>
+                <p>Digital Business & Entrepreneurship</p>
             </div>
-            <div class="card">
-                <h3>Class 12 (Science)</h3>
-                <span class="card-meta">90% Aggregate Achievement</span>
-            </div>
-        </section>
+        </div>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="card">
+        <div class="grid-item">
+            <div class="timeline">Prior</div>
+            <div class="content">
+                <h3>Higher Secondary Education</h3>
+                <p>Stream: Science</p>
+                <p>90% Aggregate Achievement</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <span class="section-num">03 / Experience</span>
+        <h2>Leadership & <em>Impact</em></h2>
+
+        <div class="grid-item">
+            <div class="timeline">Institutional</div>
+            <div class="content">
                 <h3>Multiple Event Management</h3>
-                <ul>
-                    <li>Orchestrated diverse large-scale events with a focus on seamless logistics.</li>
-                    <li>Managed end-to-end planning, resource allocation, and on-ground coordination.</li>
-                </ul>
+                <p>Orchestrated large-scale events focusing on seamless logistics and end-to-end planning.</p>
             </div>
-            <div class="card">
-                <h3>House Prefect</h3>
-                <ul>
-                    <li>Managed a house of 100+ students.</li>
-                    <li>Led the house to secure the Overall Championship title.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Head of Organizing Committee</h3>
-                <ul>
-                    <li>Directed execution of the Annual Function and school-wide events.</li>
-                    <li>Acted as the primary bridge between the student body and administration.</li>
-                </ul>
-            </div>
-        </section>
+        </div>
 
-        <section id="certifications">
-            <h2>Certifications</h2>
-            <div class="tag-group">
-                <span class="tag">UCMAS Mastery</span>
-                <span class="tag">IMO Level 2 Qualifier</span>
-                <span class="tag">NSO Level 2 Qualifier</span>
-                <span class="tag">Merit Distinction</span>
+        <div class="grid-item">
+            <div class="timeline">Leadership</div>
+            <div class="content">
+                <h3>House Prefect & Organizing Head</h3>
+                <p>Managed 100+ students and led the house to an Overall Championship title.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="tag-group">
-                <span class="tag">Finance</span>
-                <span class="tag">Accounting</span>
-                <span class="tag">Strategy</span>
-                <span class="tag">Leadership</span>
-                <span class="tag">Quantitative</span>
-                <span class="tag">Analysis</span>
-            </div>
-        </section>
+    <section id="skills">
+        <span class="section-num">04 / Skills</span>
+        <h2>What I <em>Bring</em></h2>
+        <div class="skills-container">
+            <div class="skill-pill">FINANCE</div>
+            <div class="skill-pill">ACCOUNTING</div>
+            <div class="skill-pill">STRATEGY</div>
+            <div class="skill-pill">LEADERSHIP</div>
+            <div class="skill-pill">ANALYSIS</div>
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-links">
-                <a href="mailto:ishitva.rathore25@iimb.ac.in">Email</a>
-                <a href="https://www.linkedin.com/in/ishitva-rathore-7091b1387" target="_blank">LinkedIn</a>
-            </div>
-        </section>
-    </div>
+    <section id="contact" style="border-bottom: none;">
+        <span class="section-num">05 / Contact</span>
+        <h2>Let's <em>Connect</em></h2>
+        <a href="mailto:ishitva.rathore25@iimb.ac.in" class="contact-link">ishitva.rathore25@iimb.ac.in</a>
+        <a href="https://www.linkedin.com/in/ishitva-rathore-7091b1387" class="contact-link" target="_blank">LinkedIn Profile</a>
+    </section>
 
 </body>
 </html>
