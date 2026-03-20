@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishitva Rathore | IIM Bangalore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 1. CSS VARIABLES (Colors & Theme) */
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #111111;
+            --text-main: #ffffff;
+            --text-dim: #a1a1aa;
+            --accent: #3b82f6; /* IIMB Professional Blue */
+            --border: #262626;
+        }
+
+        /* 2. GLOBAL RESET & TYPOGRAPHY */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* 3. NAVIGATION (Positioning & Flexbox) */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: center;
+            padding: 1.2rem;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* 4. LAYOUT CONTAINER */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem;
+        }
+
+        /* 5. HERO SECTION */
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: var(--accent);
+        }
+
+        /* 6. SECTION STYLING */
+        section {
+            margin-top: 5rem;
+        }
+
+        h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-dim);
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+        }
+
+        /* 7. EXPERIENCE CARDS (Selectors & Hover Effects) */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px); /* Interactive lift */
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .card-meta {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            color: var(--text-dim);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* 8. SKILLS & CERTS (Flexbox Grid) */
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tag {
+            background: var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+            transition: 0.3s;
+        }
+
+        .tag:hover {
+            background: var(--accent);
+        }
+
+        /* 9. CONTACT SECTION */
+        .contact-links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-right: 2rem;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            border-bottom: 1px solid var(--accent);
+        }
+
+        /* 10. RESPONSIVE DESIGN */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.5rem; }
+            nav a { margin: 0 0.8rem; font-size: 0.65rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Ishitva Rathore</h1>
+            <p>BBA in Digital Business & Entrepreneurship | <span class="highlight">IIM Bangalore</span></p>
+            <p style="font-size: 0.9rem; margin-top: 8px;">Aspiring Entrepreneur • Finance & Accounting</p>
+        </header>
+
+        <section id="about">
+            <h2>About</h2>
+            <p class="about-text">I am a BBA in Digital Business & Entrepreneurship student at IIM Bangalore, dedicated to mastering the intersection of finance and scalable digital models. As an aspiring entrepreneur, I focus on building data-driven business solutions that create measurable real-world impact. I combine rigorous analytical thinking from a Science background with proven leadership to drive value in the evolving digital economy.</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="card">
+                <h3>IIM Bangalore</h3>
+                <span class="card-meta">BBA in Digital Business & Entrepreneurship | 2025 - 2028</span>
+            </div>
+            <div class="card">
+                <h3>Class 12 (Science)</h3>
+                <span class="card-meta">90% Aggregate Achievement</span>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="card">
+                <h3>Multiple Event Management</h3>
+                <ul>
+                    <li>Orchestrated diverse large-scale events with a focus on seamless logistics.</li>
+                    <li>Managed end-to-end planning, resource allocation, and on-ground coordination.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>House Prefect</h3>
+                <ul>
+                    <li>Managed a house of 100+ students.</li>
+                    <li>Led the house to secure the Overall Championship title.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Head of Organizing Committee</h3>
+                <ul>
+                    <li>Directed execution of the Annual Function and school-wide events.</li>
+                    <li>Acted as the primary bridge between the student body and administration.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="tag-group">
+                <span class="tag">UCMAS Mastery</span>
+                <span class="tag">IMO Level 2 Qualifier</span>
+                <span class="tag">NSO Level 2 Qualifier</span>
+                <span class="tag">Merit Distinction</span>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="tag-group">
+                <span class="tag">Finance</span>
+                <span class="tag">Accounting</span>
+                <span class="tag">Strategy</span>
+                <span class="tag">Leadership</span>
+                <span class="tag">Quantitative</span>
+                <span class="tag">Analysis</span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-links">
+                <a href="mailto:ishitva.rathore25@iimb.ac.in">Email</a>
+                <a href="https://www.linkedin.com/in/ishitva-rathore-7091b1387" target="_blank">LinkedIn</a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
