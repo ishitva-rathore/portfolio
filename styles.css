@@ -8,19 +8,15 @@
 /* BODY */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0a0a0a;
+  background: #0a0a0a;
   color: #a1a1aa;
   line-height: 1.6;
 }
 
 /* NAVBAR */
 header {
-  padding: 20px 60px;
-  border-bottom: 1px solid #1f1f1f;
-  position: sticky;
-  top: 0;
-  background: #0a0a0a;
-  z-index: 1000;
+  padding: 25px 80px;
+  border-bottom: 1px solid #1a1a1a;
 }
 
 nav {
@@ -30,9 +26,9 @@ nav {
 }
 
 .logo {
-  font-family: 'Poppins', sans-serif;
-  color: white;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.5rem;
+  color: white;
 }
 
 .logo span {
@@ -46,61 +42,58 @@ nav ul {
 }
 
 nav ul li {
-  margin-left: 25px;
+  margin-left: 30px;
 }
 
-nav ul li a {
+nav a {
   text-decoration: none;
-  color: #a1a1aa;
+  color: #777;
   transition: 0.3s;
 }
 
-nav ul li a:hover {
+nav a:hover {
   color: #22d3ee;
-  text-shadow: 0 0 8px #22d3ee;
 }
 
-/* HERO (LEFT SIDE PREMIUM) */
+/* HERO */
 .hero {
+  height: 90vh;
   display: flex;
   align-items: center;
-  min-height: 90vh;
   padding: 0 80px;
 }
 
-.hero-container {
-  max-width: 1100px;
-}
-
-.hero-text {
-  max-width: 600px;
-  text-align: left;
+.hero-left {
+  max-width: 650px;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 4.2rem;
+  line-height: 1.1;
   color: white;
-  line-height: 1.2;
 }
 
-.hero h1 span {
+.hero span {
   color: #22d3ee;
 }
 
-.hero p {
-  margin-top: 15px;
+.tagline {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #bbb;
 }
 
 .sub {
-  color: #71717a;
+  margin-top: 10px;
+  color: #666;
 }
 
 /* BUTTON */
 .btn {
-  display: inline-block;
   margin-top: 30px;
-  padding: 12px 28px;
+  display: inline-block;
+  padding: 12px 30px;
   border: 1px solid #22d3ee;
   color: #22d3ee;
   text-decoration: none;
@@ -111,49 +104,36 @@ nav ul li a:hover {
 .btn:hover {
   background: #22d3ee;
   color: black;
-  box-shadow: 0 0 12px #22d3ee;
+  box-shadow: 0 0 10px #22d3ee;
 }
 
 /* SECTIONS */
 section {
-  padding: 100px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* ALTERNATE BACKGROUND (DEPTH) */
-section:nth-child(even) {
-  background: #0d0d0d;
+  padding: 100px 80px;
+  max-width: 1000px;
 }
 
 /* HEADINGS */
 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
   color: white;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
-h2 span {
-  color: #22d3ee;
-}
-
-/* CARDS (DEPTH EFFECT) */
+/* CARDS */
 .card {
-  background: #121212;
-  margin: 20px 0;
+  background: #141414;
   padding: 25px;
-  border-radius: 10px;
+  margin-bottom: 20px;
+  border-radius: 12px;
   border: 1px solid #1f1f1f;
   transition: 0.3s;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .card:hover {
-  transform: translateY(-8px);
   border-color: #22d3ee;
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.7),
-    0 0 15px rgba(34, 211, 238, 0.2);
+  transform: translateY(-6px);
 }
 
 /* SKILLS */
@@ -163,9 +143,9 @@ h2 span {
 }
 
 .skills span {
-  margin: 10px 10px 10px 0;
   padding: 10px 15px;
-  background: #111;
+  margin: 10px 10px 0 0;
+  background: #141414;
   border: 1px solid #1f1f1f;
   border-radius: 6px;
   transition: 0.3s;
@@ -174,34 +154,38 @@ h2 span {
 .skills span:hover {
   color: #22d3ee;
   border-color: #22d3ee;
-  text-shadow: 0 0 8px #22d3ee;
 }
 
-/* CONTACT LINKS */
+/* CONTACT */
 #contact a {
-  color: #a1a1aa;
+  color: #777;
   text-decoration: none;
-  transition: 0.3s;
 }
 
 #contact a:hover {
   color: #22d3ee;
-  text-shadow: 0 0 8px #22d3ee;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  border-top: 1px solid #1f1f1f;
-  color: #71717a;
+  padding: 30px;
+  color: #555;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  header {
+    padding: 20px;
+  }
 
   .hero {
     padding: 40px 20px;
+    height: auto;
+  }
+
+  section {
+    padding: 80px 20px;
   }
 
   .hero h1 {
@@ -212,4 +196,39 @@ footer {
     flex-direction: column;
     gap: 10px;
   }
+}/* FADE-IN ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+/* CURSOR GLOW EFFECT */
+body::before {
+  content: "";
+  position: fixed;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(34,211,238,0.15), transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* KEEP CONTENT ABOVE GLOW */
+body * {
+  position: relative;
+  z-index: 1;
 }
